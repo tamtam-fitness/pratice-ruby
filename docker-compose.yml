@@ -1,0 +1,10 @@
+version: '3'
+services:
+  ruby:
+    image: ruby:latest
+    container_name: rubyenv
+    tty: true
+    # command: bash -c 'gem install debug'
+    working_dir: /usr/app/
+    volumes:
+        - ./src/:/usr/app/
