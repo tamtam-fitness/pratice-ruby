@@ -2,4 +2,6 @@ FROM ruby:latest
 
 WORKDIR /usr/app/
 
-RUN gem install pry
+COPY ./src/Gemfile Gemfile
+
+RUN gem install bundler && bundle install

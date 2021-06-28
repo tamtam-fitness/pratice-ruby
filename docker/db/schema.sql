@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS active_record_test.users (id INT, name VARCHAR(10), age INT, created_at DATETIME, updated_at DATETIME);
