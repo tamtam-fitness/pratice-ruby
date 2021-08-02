@@ -1,53 +1,56 @@
-# class Language
+class Language
+  attr_accessor :name
+  attr_accessor :kind
 
-#   def initialize(attribute = {name: "",kind: ""})
-#     self.name = attribute[:name]
-#     self.kind = attribute[:kind]
-#   end
+  def initialize(attribute = {})
+    @name = attribute[:name]
+    @kind = attribute[:kind]
+  end
 
-#   def print
-#     puts self.name + "|" + self.kind
-#   end
+  def print
+    puts self.name + "|" + self.kind
+  end
 
-# end
+end
 
-# class ProgramLanguage
+class ProgramLanguage
+  attr_accessor :language
 
-#   def initialize(language)
-#     self.language = language
-#   end
+  def initialize(language)
+    @language = language
+  end
 
-#   def call_method
-#   end
-# end
+  def call_method
+  end
+end
 
-# class Python
+class Python < ProgramLanguage
 
-#   def call_method
-#     "#{self.Language.name}: #{self.Language.kind},  print('hello')"
-#   end
+  def call_method
+    "#{self.language.name}: #{self.language.kind},  print('hello')"
+  end
 
-# end
-
-
-# class Java
-
-#   def call_method
-#     "#{self.Language.name}: #{self.Language.kind}, system.out.Println "
-#   end
-# end
+end
 
 
-# def do_polymofism(prog_lang)
-#   puts prog_lang.call_method
-# end
+class Java  < ProgramLanguage
+
+  def call_method
+    "#{self.language.name}: #{self.language.kind}, system.out.Println "
+  end
+end
 
 
-# p_l = Language.new(name: "Python",kind: "dynamic")
-# p_l.print
-# python = Python.new(p_l)
+def do_polymofism(prog_lang)
+  puts prog_lang.call_method
+end
 
-# l_j = Language.new(name: "Java",kind: "static")
-# java = Java.new(l_j)
 
-# [python, java].each {|lang| do_polymofism(lang)}
+p_l = Language.new(name: "Python",kind: "dynamic")
+p_l.print
+python = Python.new(p_l)
+
+l_j = Language.new(name: "Java",kind: "static")
+java = Java.new(l_j)
+
+[python, java].each {|lang| do_polymofism(lang)}
