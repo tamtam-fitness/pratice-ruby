@@ -8,3 +8,5 @@ gem "pry"
 gem "erb"
 gem "activerecord"
 gem "mysql2"
+# https://madogiwa0124.hatenablog.com/entry/2019/05/26/144214
+gem "activesupport"
